@@ -7,8 +7,6 @@ import itertools
 from collections import Counter
 from collections import deque
 
-## This code was implemented with the help of ChatGPT
-
 ## Sound play
 
 import threading
@@ -20,8 +18,6 @@ import pyaudio
 
 ## Sound play
 
-## End of the code which was implemented with the help of ChatGPT
-
 import cv2 as cv
 import numpy as np
 import mediapipe as mp
@@ -29,8 +25,6 @@ import mediapipe as mp
 from utils import CvFpsCalc
 from model import KeyPointClassifier
 from model import PointHistoryClassifier
-
-## This code was implemented with the help of ChatGPT
 
 ## Sound play
 
@@ -47,8 +41,6 @@ samplerate = 44100
 stream = None
     
 ## Sound play
-
-## End of the code which was implemented withe the help of ChatGPT
 
 def get_args():
     parser = argparse.ArgumentParser()
@@ -106,14 +98,10 @@ def main():
 
     # Read labels ###########################################################
 
-    ## This code was implemented with the help of ChatGPT
-
     with open('model/keypoint_classifier/keypoint_classifier_label.csv',
           encoding='utf-8-sig') as f:
         reader = csv.DictReader(f)
         keypoint_classifier_labels = {row['label']:row['path'] for row in reader}
-
-    ## End of the code which was implemented with the help of ChatGPT
 
     with open(
             'model/point_history_classifier/point_history_classifier_label.csv',
@@ -183,8 +171,6 @@ def main():
                 logging_csv(number, mode, pre_processed_landmark_list,
                             pre_processed_point_history_list)
 
-                ## This code was implemented with the help of ChatGPT
-
                 ## Please note that the wav files which are used for this code were reused from a project which may be found at the following URL:
                 ## https://github.com/priiyaanjaalii0611/Piano
                 
@@ -202,8 +188,6 @@ def main():
                     play_sound_threaded(keypoint_classifier_labels['4'])
                 elif hand_sign_id == 5 and keypoint_classifier_labels.get('5'):
                     play_sound_threaded(keypoint_classifier_labels['5'])
-
-                ## End of the code which was implemented withe the help of ChatGPT
 
                 # Finger gesture classification
                 finger_gesture_id = 0
